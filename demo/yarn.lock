@@ -701,6 +701,17 @@
     nanoid "^3.3.7"
     prop-types "^15.8.1"
 
+"@rjsf/core@^5.20.0":
+  version "5.20.0"
+  resolved "https://registry.yarnpkg.com/@rjsf/core/-/core-5.20.0.tgz#4e5ab404269ad5699f4c99fea1e8cc049b50012f"
+  integrity sha512-WLxtdNx+KlOXmVpCcyAgXqiQEL9k8ejC8rFYMAhdY7kzuh1e/0y13wHjoTkFXFg/Cxd2faENxf+oQoe1TC3n5g==
+  dependencies:
+    lodash "^4.17.21"
+    lodash-es "^4.17.21"
+    markdown-to-jsx "^7.4.1"
+    nanoid "^3.3.7"
+    prop-types "^15.8.1"
+
 "@rjsf/utils@^5.18.4":
   version "5.18.5"
   resolved "https://registry.yarnpkg.com/@rjsf/utils/-/utils-5.18.5.tgz#638724740b29784804dd244b0574213aa181469b"
@@ -712,10 +723,31 @@
     lodash-es "^4.17.21"
     react-is "^18.2.0"
 
+"@rjsf/utils@^5.20.0":
+  version "5.20.0"
+  resolved "https://registry.yarnpkg.com/@rjsf/utils/-/utils-5.20.0.tgz#c0f2f80401866193ebb3d059c84133b6ef6f8ac1"
+  integrity sha512-1hICYfz4DI+kgyITJgKcOAX2WoTMHLVwb199dz9ZnTH90YzbpbaQeXoEs06/i5vy0HNYLJ6uKd4Ety5eN4Uf+w==
+  dependencies:
+    json-schema-merge-allof "^0.8.1"
+    jsonpointer "^5.0.1"
+    lodash "^4.17.21"
+    lodash-es "^4.17.21"
+    react-is "^18.2.0"
+
 "@rjsf/validator-ajv8@^5.18.4":
   version "5.18.5"
   resolved "https://registry.yarnpkg.com/@rjsf/validator-ajv8/-/validator-ajv8-5.18.5.tgz#0f02f39462b3cdc15641df9dd63263600556b374"
   integrity sha512-R1kPl86NzhbVYyRQ7Sa3GLDEmZdum7Qcvi9wKBy0GmnONM9dX6wZGikzr5/7x8mVYCIjukAd3eL129uchIv95w==
+  dependencies:
+    ajv "^8.12.0"
+    ajv-formats "^2.1.1"
+    lodash "^4.17.21"
+    lodash-es "^4.17.21"
+
+"@rjsf/validator-ajv8@^5.20.0":
+  version "5.20.0"
+  resolved "https://registry.yarnpkg.com/@rjsf/validator-ajv8/-/validator-ajv8-5.20.0.tgz#c161027ddc115ff2d8e4eaa4c43645231bbd65f0"
+  integrity sha512-0S/KwVdI1rI4joGgVYJGK4NSvw2jtzeLQ6ALCJRLF0Ead7vYKpYqgkkBxCtI0yDwg34phSu35D4n8/Craf/c3g==
   dependencies:
     ajv "^8.12.0"
     ajv-formats "^2.1.1"

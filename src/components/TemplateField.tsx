@@ -53,7 +53,8 @@ export default function ({
     ) : null
   }
 
-  const description = uiSchema && uiSchema['ui:description']
+  const description =
+    (uiSchema && uiSchema['ui:description']) || schema.description
   return (
     <div className={classNames + ' fr-mt-1w'} style={style}>
       {title}

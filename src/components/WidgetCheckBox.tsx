@@ -6,6 +6,8 @@ export default function (props: WidgetProps) {
   return (
     <div style={{ marginTop: '1rem', marginBottom: '-1rem' }}>
       <Checkbox
+        state={props.rawErrors && props.rawErrors.length ? 'error' : 'default'}
+        stateRelatedMessage={props.rawErrors?.length && props.rawErrors[0]}
         options={[
           {
             label: (
@@ -16,7 +18,7 @@ export default function (props: WidgetProps) {
                     : undefined
                 }
               >
-                {props.schema.title + (props.required ? '*' : '')}
+                {props.schema.title + (props.required ? ' (obligatoire)' : '')}
               </LabelWithHelp>
             ),
             nativeInputProps: {

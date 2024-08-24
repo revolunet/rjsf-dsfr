@@ -25,6 +25,7 @@ export default function CheckboxesWidget<
   value,
   autofocus,
   uiSchema,
+  rawErrors,
   schema,
   readonly,
   required,
@@ -71,6 +72,8 @@ export default function CheckboxesWidget<
   return (
     <div style={{ marginTop: '1rem', marginBottom: '-1rem' }}>
       <Checkbox
+        state={rawErrors && rawErrors.length ? 'error' : 'default'}
+        stateRelatedMessage={rawErrors?.length && rawErrors[0]}
         options={
           (Array.isArray(enumOptions) &&
             enumOptions.map((option, index: number) => {
@@ -89,7 +92,7 @@ export default function CheckboxesWidget<
                       uiSchema !== undefined ? uiSchema['ui:help'] : undefined
                     }
                   >
-                    {option.label + (required ? '*' : '')}
+                    {option.label + (required ? ' (obligatoire)' : '')}
                   </LabelWithHelp>
                 ),
                 nativeInputProps: {

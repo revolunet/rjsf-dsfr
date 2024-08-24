@@ -10,6 +10,7 @@ import widgets from './widgets'
 import ordering from './ordering'
 import references from './references'
 import custom from './custom'
+import dsfr1 from './dsfr1'
 import errors from './errors'
 import examples from './examples'
 import large from './large'
@@ -35,6 +36,7 @@ import deepFreeze from 'deep-freeze-es6'
 
 const _samples: Record<string, Sample> = {
   Blank: { schema: {}, uiSchema: {}, formData: {} },
+  DSFR1: dsfr1,
   Simple: simple,
   'UI Options': options,
   Nested: nested,

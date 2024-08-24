@@ -23,6 +23,7 @@ export default function RadioWidget<
   required,
   disabled,
   readonly,
+  rawErrors,
   onChange,
   onBlur,
   onFocus,
@@ -44,6 +45,8 @@ export default function RadioWidget<
   return (
     <div style={{ marginTop: '1rem', marginBottom: '-1rem' }}>
       <RadioButtons
+        state={rawErrors && rawErrors.length ? 'error' : 'default'}
+        stateRelatedMessage={rawErrors?.length && rawErrors[0]}
         orientation={inline ? 'horizontal' : 'vertical'}
         options={
           (options &&

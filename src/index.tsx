@@ -68,6 +68,7 @@ export default function FormDSFR<
 >({ widgets, templates, validator, ...rest }: FormPropsDSFR<T, S, F>) {
   return (
     <Form
+      // @ts-ignore
       validator={validator ?? defaultValidator}
       widgets={
         widgets !== undefined
@@ -77,6 +78,7 @@ export default function FormDSFR<
             }
           : widgetsDSFR
       }
+      // @ts-ignore
       templates={
         templates !== undefined
           ? {

@@ -8,7 +8,7 @@ const alias: Record<string, string> = {}
 // add local path in development to make vite use sources directly avoiding build step
 alias['@codegouvfr/rjsf-dsfr'] = path.resolve(
   __dirname,
-  process.env.NODE_ENV !== 'production' ? '../dist' : '../src',
+  process.env.NODE_ENV !== 'production' ? '../src' : '../dist',
 )
 
 // https://vitejs.dev/config/

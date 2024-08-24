@@ -55,9 +55,9 @@
   },
   "dependencies": {
     "@codegouvfr/react-dsfr": "^1.9.22",
-    "@rjsf/core": "^5.18.4",
-    "@rjsf/utils": "^5.18.4",
-    "@rjsf/validator-ajv8": "^5.18.4"
+    "@rjsf/core": "^5.20.1",
+    "@rjsf/utils": "^5.20.1",
+    "@rjsf/validator-ajv8": "^5.20.1"
   },
   "peerDependencies": {
     "react": "^18.3.3"

@@ -57,7 +57,7 @@ export default function WidgetTextarea<
         style: { backgroundColor },
       }}
       state={rawErrors && rawErrors.length ? 'error' : 'default'}
-      stateRelatedMessage={rawErrors?.length && rawErrors[0]}
+      stateRelatedMessage={(rawErrors?.length && rawErrors[0]) || null}
       disabled={disabled}
       // NOTE: we don't want to display the label here because it is already
       // displayed in the FieldTemplate (which manages the label and hint).

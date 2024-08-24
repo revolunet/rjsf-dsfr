@@ -19,18 +19,14 @@ const DSFR1: Sample = {
         minLength: 2,
         description: "Le nom c'est important",
       },
-      prenom: { title: 'Prénom', type: 'string' },
-
-      ddn: {
-        title: 'Date de naissance',
+      bio: {
+        title: 'Petite bio',
+        description: 'Ne soyez pas timide',
         type: 'string',
-        format: 'date',
       },
-      books: { title: 'Books at home', type: 'number', minimum: 0 },
       accept: { title: "J'accepte les CGUs", type: 'boolean' },
       regime: {
         title: 'Régime',
-        enumNames: ['Végé', 'Végan', 'Fléxi'],
         enum: ['vege', 'vegan', 'flex'],
       },
     },
@@ -99,14 +95,25 @@ const DSFR1: Sample = {
     required: ['nom', 'accept'],
   },
   uiSchema: {
-    'ui:submitButtonOptions': {
-      submitText: 'Envoyer ma candidature',
+    nom: {
+      'ui:autofocus': true,
+    },
+    regime: {
+      'ui:enumNames': ['Végé', 'Végan', 'Fléxi'],
+      'ui:widget': 'radio',
+    },
+    bio: {
+      'ui:widget': 'textarea',
     },
     books: {
       'ui:widget': 'updown',
     },
-    food: {
-      'ui:widget': 'radio',
+    food: {},
+    // food_vege: {
+    //   //'ui:widget': 'checkboxes',
+    // },
+    'ui:submitButtonOptions': {
+      submitText: 'Envoyer ma candidature',
     },
   },
   formData: {},

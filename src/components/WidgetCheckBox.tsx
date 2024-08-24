@@ -7,7 +7,9 @@ export default function (props: WidgetProps) {
     <div style={{ marginTop: '1rem', marginBottom: '-1rem' }}>
       <Checkbox
         state={props.rawErrors && props.rawErrors.length ? 'error' : 'default'}
-        stateRelatedMessage={props.rawErrors?.length && props.rawErrors[0]}
+        stateRelatedMessage={
+          (props.rawErrors?.length && props.rawErrors[0]) || null
+        }
         options={[
           {
             label: (

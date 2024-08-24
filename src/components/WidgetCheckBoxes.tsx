@@ -73,7 +73,7 @@ export default function CheckboxesWidget<
     <div style={{ marginTop: '1rem', marginBottom: '-1rem' }}>
       <Checkbox
         state={rawErrors && rawErrors.length ? 'error' : 'default'}
-        stateRelatedMessage={rawErrors?.length && rawErrors[0]}
+        stateRelatedMessage={(rawErrors?.length && rawErrors[0]) || null}
         options={
           (Array.isArray(enumOptions) &&
             enumOptions.map((option, index: number) => {

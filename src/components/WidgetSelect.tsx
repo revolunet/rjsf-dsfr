@@ -84,13 +84,26 @@ export default function <
           Séléctionner une option
         </option>
       )}
-      {props.options.enumOptions?.map((item, index) => (
-        <option key={index} value={String(index)}>
-          {item.label}
-        </option>
-      ))}
+      {props.options.enumOptions?.map((item, index) => {
+        // rjsf doesnt handle yet 'ui:enumNames' everywhere https://github.com/rjsf-team/react-jsonschema-form/pull/4263/
+        const optionLabel =
+          props.options.enumNames &&
+          Array.isArray(props.options.enumNames) &&
+          props.options.enumNames.length >= index + 1
+            ? props.options.enumNames[index]
+            : item.label
+        return (
+          <option key={index} value={String(index)}>
+            {props.options.enumNames &&
+            Array.isArray(props.options.enumNames) &&
+            props.options.enumNames.length >= index + 1
+              ? props.options.enumNames[index]
+              : item.label}
+          </option>
+        )
+      })}
       state={rawErrors && rawErrors.length ? 'error' : 'default'}
-      stateRelatedMessage={rawErrors?.length && rawErrors[0]}
+      stateRelatedMessage={(rawErrors?.length && rawErrors[0]) || null}
     </Select>
   )
 }

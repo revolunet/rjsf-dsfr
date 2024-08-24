@@ -41,16 +41,16 @@ export default function RadioWidget<
 
   const radioValues = Array.isArray(value) ? value : [value]
   const inline = Boolean(options && options.inline)
-  console.log(value, options)
+  // console.log(value, options)
   return (
     <div style={{ marginTop: '1rem', marginBottom: '-1rem' }}>
       <RadioButtons
         state={rawErrors && rawErrors.length ? 'error' : 'default'}
-        stateRelatedMessage={rawErrors?.length && rawErrors[0]}
+        stateRelatedMessage={(rawErrors?.length && rawErrors[0]) || null}
         orientation={inline ? 'horizontal' : 'vertical'}
         options={
           (options &&
-            options.enumOptions?.map((option) => {
+            options.enumOptions?.map((option, index) => {
               const checked = enumOptionsIsSelected<S>(
                 option.value,
                 radioValues,
@@ -58,7 +58,13 @@ export default function RadioWidget<
               const itemDisabled =
                 Array.isArray(enumDisabled) &&
                 enumDisabled.indexOf(option.value) !== -1
-
+              // rjsf doesnt handle yet 'ui:enumNames' everywhere https://github.com/rjsf-team/react-jsonschema-form/pull/4263/
+              const optionLabel =
+                options.enumNames &&
+                Array.isArray(options.enumNames) &&
+                options.enumNames.length >= index + 1
+                  ? options.enumNames[index]
+                  : option.label
               return {
                 label: (
                   <LabelWithHelp
@@ -66,7 +72,7 @@ export default function RadioWidget<
                       uiSchema !== undefined ? uiSchema['ui:help'] : undefined
                     }
                   >
-                    {option.label}
+                    {optionLabel}
                   </LabelWithHelp>
                 ),
                 nativeInputProps: {

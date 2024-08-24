@@ -6,9 +6,10 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 const alias: Record<string, string> = {}
 
 // add local path in development to make vite use sources directly avoiding build step
-if (process.env.NODE_ENV !== 'production') {
-  alias['@codegouvfr/rjsf-dsfr'] = path.resolve(__dirname, '../src')
-}
+alias['@codegouvfr/rjsf-dsfr'] = path.resolve(
+  __dirname,
+  process.env.NODE_ENV !== 'production' ? '../dist' : '../src',
+)
 
 // https://vitejs.dev/config/
 export default defineConfig({

@@ -99,6 +99,8 @@ jobs:
       - uses: actions/setup-node@v4
       - name: Build demo
         run: |
+          yarn install --immutable
+          yarn build
           cd demo
           yarn install --immutable
           yarn build
